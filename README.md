@@ -1,5 +1,6 @@
 # weather-app
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/BurhanH/weather-app/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/BurhanH/weather-app.svg?branch=master)](https://travis-ci.org/BurhanH/weather-app)
 
 This is an application to get the weather in a city.
 
