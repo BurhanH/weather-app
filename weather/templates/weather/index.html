@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Weather App</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+          <h5 class="my-0 mr-md-auto font-weight-normal">Weather Company</h5>
+          <nav class="my-2 my-md-0 mr-md-3">
+          </nav>
+        </div>
+        <div class="container m-5">
+            <div class="row">
+                <div class="col-5 offset-1">
+                    <h1>Get weather in your city</h1>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.name }}
+                        {{ form.country }}
+                        <input type="submit" name="send" value="Get" class="mt-2 btn btn-danger">
+                    </form>
+                </div>
+                <div class="col-4 offset-2">
+                    <h1>Information</h1>
+
+
+                    {% for city in info %}
+                    <div class="alert alert-success">
+                        <div class="row">
+                            <div class="col-9">
+                                <b>City:</b> {{ city.city }}, {{ city.country }}<br>
+                                <b>Temp:</b> {{ city.temp }} <sup>o</sup>F<br>
+                            </div>
+                            <img src="https://openweathermap.org/img/w/{{ city.icon }}.png"
+                                 alt="Image of weather" class="img-thumbnail">
+                        </div>
+                        <b>Pressure:</b> {{ city.pressure }} hPa<br>
+                        <b>Humidity:</b> {{ city.humidity }} %<br>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
