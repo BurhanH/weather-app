@@ -12,7 +12,7 @@ class CityForm(ModelForm):
                     'class': 'form-control',
                     'name': 'city',
                     'id': 'city',
-                    'placeholder': 'Enter City'
+                    'placeholder': 'Enter City name.'
                 }
             ),
             'country': TextInput(
@@ -20,7 +20,7 @@ class CityForm(ModelForm):
                     'class': 'form-control',
                     'name': 'country',
                     'id': 'country',
-                    'placeholder': 'Enter Country. Use ISO 3166 country codes'
+                    'placeholder': 'Enter Country. Use ISO 3166 country codes.'
                 }
             )
 
